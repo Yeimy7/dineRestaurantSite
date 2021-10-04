@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;600;700&display=swap');
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all .2s ease-in;
+}
+
+:root {
+  --beaver: hsl(27, 22%, 51%);
+  --codGray: hsl(0, 0%, 7%);
+  --mirage: hsl(234, 30%, 13%);
+  --ebonyClay: hsl(219, 22%, 18%);
+  --shuttleGray: hsl(216, 14%, 42%);
+  --white: hsl(0, 0%, 100%);
+  --error: hsl(0, 43%, 50%);
+  --bold: 700;
+  --semi-bold: 600;
+  --regular: 400;
+  --light: 300;
+  font-family: 'Spartan', sans-serif;
+  font-size: 10px;
+  font-weight: var(--regular);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border-style: none;
+  outline: none;
+}
+
+.wrapper {
+  max-width: 1200px;
+  padding: 0 40px;
+  margin: 0 auto;
+  font-size: 1.8rem;
+}
+
+.hero {
+  background-image: url('../assets/homepage/hero-bg-desktop.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: var(--white);
+  padding: 70px 0 120px;
+}
+
+.hero-grid {
+  max-width: 520px;
+}
+
+.hero__header {
+  padding: 0 0 70px;
+}
+
+.hero__title {
+  font-size: 6.4rem;
+  font-weight: var(--light);
+  margin: 50px 0 20px;
+}
+
+.hero__description {
+  line-height: 3rem;
+}
+
+.button {
+  padding: 25px 50px;
+  margin: 40px 0;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--semi-bold);
+  font-size: 1.4rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--white);
+  color: var(--codGray);
+}
+
+.card-grid--top {
+  margin-top: -7rem;
+}
+
+.card-grid {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__info {
+  width: 450px;
+  color: var(--mirage);
+}
+
+.card__info__pattern {
+  margin-bottom: 4.5rem;
+}
+
+.card__info__title {
+  width: 400px;
+  font-size: 4rem;
+  line-height: 5.5rem;
+  margin-bottom: 2rem;
+}
+
+.card__info__description {
+  line-height: 3rem;
+}
+
+.card-grid--bottom {
+  margin-top: 10rem;
+  margin-bottom: -7rem;
+}
+
+.card--dark {
+  color: var(--white);
+}
+
+.menu {
+  background-color: var(--codGray);
+  color: var(--white);
+  padding: 150px 0 100px;
+}
+
+.menu-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 0;
+  border-bottom: 2px solid var(--ebonyClay);
+}
+.review:nth-last-child(1){
+  border: none;
+}
+
+.review__image {
+  position: relative;
+  width: 160px;
+  height: 100px
+}
+
+.review__pattern {
+  display: inline-block;
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  z-index: 1;
+}
+
+.review__image img {
+  position: absolute;
+  display: block;
+  margin: 0;
+  z-index: 2;
+}
+
+.review__detail {
+  /* padding: 0 2rem; */
+  width: 360px;
+  line-height: 3rem;
+}
+
+.review__detail__title {
+  font-size: 1.8rem;
+}
+
+.review__detail__description {
+  font-size: 1.5rem;
+}
