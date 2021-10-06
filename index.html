@@ -26,6 +26,7 @@
     <section class="card">
       <div class="wrapper">
         <div class="card-grid card-grid--top">
+          <div class="pattern pattern--center"></div>
           <img
             src="./assets/homepage/enjoyable-place-desktop.jpg"
             alt="enjoyable"
@@ -48,9 +49,10 @@
         </div>
       </div>
     </section>
-    <section class="card">
+    <section class="card card--bottom">
       <div class="wrapper">
         <div class="card-grid card-grid--bottom">
+          <div class="pattern pattern--bottom"></div>
           <div class="card__info">
             <img
               class="card__info__pattern"
@@ -64,10 +66,13 @@
               sustainable food.
             </p>
           </div>
-          <img
-            src="./assets/homepage/locally-sourced-desktop.jpg"
-            alt="locally sourced"
-          />
+          <div class="card__image">
+            <img
+              src="./assets/homepage/locally-sourced-desktop.jpg"
+              alt="locally sourced"
+            />
+            <div class="card__image__icon"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -155,25 +160,27 @@
     </section>
     <section class="options">
       <div class="wrapper">
-        <div class="options-grid">
-          <div>
+        <div class="card-grid">
+          <div class="pattern pattern--top"></div>
+          <div class="card__image">
             <img
               src="./assets/homepage/family-gathering-desktop.jpg"
               alt="family gathering"
             />
+            <div class="card__image__icon card__image__icon--top"></div>
           </div>
-          <div>
-            <h2>Family gathering</h2>
-            <p>
+          <div class="card__info">
+            <h2 class="card__info__title">Family gathering</h2>
+            <p class="card__info__description">
               We love catering for entire families. So please bring everyone
               along for a special meal with your loved ones. We'll provide a
               memorable experience for all.
             </p>
             <button class="button">book a table</button>
             <ul class="list">
-              <li>Family gathering</li>
-              <li>Special events</li>
-              <li>Social events</li>
+              <li class="list__item list__item--active">Family gathering</li>
+              <li class="list__item">Special events</li>
+              <li class="list__item">Social events</li>
             </ul>
           </div>
         </div>
@@ -183,7 +190,7 @@
     <section class="ready">
       <div class="wrapper">
         <div class="ready-grid">
-          <span> Ready to make a reservation? </span>
+          <h2 class="card__info__title card__info__title--white"> Ready to make a reservation? </h2>
           <button class="button button--transparent">book a table</button>
         </div>
       </div>
@@ -206,7 +213,7 @@
             <a href="tel:+00 44 123 4567" class="phone"> +00 44 123 4567 </a>
           </address>
           <div class="schedule">
-            <h3>open times</h3>
+            <h3 class="schedule__title">open times</h3>
             <ul>
               <li>mon - fri: 9:00 am - 10:00 pm</li>
               <li>sat - sun: 9:00 am - 11:30 pm</li>
