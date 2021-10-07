@@ -46,25 +46,26 @@ button {
 
 .hero {
   background-image: url('../assets/homepage/hero-bg-desktop.jpg');
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   color: var(--white);
-  padding: 70px 0 120px;
 }
 
 .hero-grid {
-  max-width: 520px;
+  max-width: 540px;
+  padding: 7rem 0 16.5rem;
+  border: 2px solid red;
 }
 
-.hero__header {
-  padding: 0 0 70px;
+.hero__logo {
+  margin-bottom: 14rem;
 }
 
 .hero__title {
   font-size: 6.4rem;
   font-weight: var(--light);
-  margin: 50px 0 20px;
+  margin-bottom: 2rem;
 }
 
 .hero__description {
@@ -84,7 +85,8 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
-.button--transparent{
+
+.button--transparent {
   background-color: transparent;
 }
 
@@ -92,7 +94,8 @@ button {
   background-color: var(--white);
   color: var(--codGray);
 }
-.pattern{
+
+.pattern {
   position: absolute;
   background-repeat: no-repeat;
   background-size: cover;
@@ -100,29 +103,33 @@ button {
   width: 76%;
   overflow: hidden;
 }
-.pattern--center{
+
+.pattern--center {
   background-image: url('../assets/patterns/pattern-curve-top-right.svg');
   height: 44%;
   bottom: 10rem;
   left: -12rem;
 }
- 
-.pattern--bottom{
+
+.pattern--bottom {
   background-image: url('../assets/patterns/pattern-curve-top-left.svg');
   height: 42%;
   bottom: 7rem;
-  right: -12rem;
+  right: -11.2rem;
 }
 
-.pattern--top{
+.pattern--top {
   background-image: url('../assets/patterns/pattern-curve-top-right.svg');
   height: 50%;
   top: -15rem;
   left: -47rem;
-} 
-.card{
-  overflow: hidden;
 }
+
+.card {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .card-grid--top {
   margin-top: -7rem;
 }
@@ -155,10 +162,12 @@ button {
 .card__info__description {
   line-height: 3rem;
 }
-.card__image{
+
+.card__image {
   position: relative;
 }
-.card__image__icon{
+
+.card__image__icon {
   content: url('../assets/patterns/pattern-lines.svg');
   display: inline-block;
   position: absolute;
@@ -167,11 +176,11 @@ button {
   top: 29rem;
   right: -10rem;
 }
-.card__image__icon--top{
+
+.card__image__icon--top {
   top: -4rem;
   left: -4rem;
 }
-
 
 .card-grid--bottom {
   margin-top: 10rem;
@@ -183,6 +192,8 @@ button {
 }
 
 .menu {
+  max-width: 1440px;
+  margin: 0 auto;
   background-color: var(--codGray);
   color: var(--white);
   padding: 150px 0 100px;
@@ -239,29 +250,36 @@ button {
 }
 
 .options {
- padding: 15rem 0;
- border: 1px solid blue; 
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 15rem 0;
+  border: 1px solid blue;
 }
-.list{
+
+.list {
   margin-top: 2rem;
 }
-.list__item{
+
+.list__item {
   text-transform: uppercase;
   font-weight: var(--semi-bold);
   padding: 1.2rem 0;
   font-size: 1.4rem;
   letter-spacing: 1px;
-  color:#b3b5ba;
+  color: #b3b5ba;
   position: relative;
   cursor: pointer;
 }
-.list__item:hover{
+
+.list__item:hover {
   color: var(--codGray);
 }
-.list__item--active{
+
+.list__item--active {
   color: var(--codGray);
 }
-.list__item--active::after{
+
+.list__item--active::after {
   content: '';
   display: block;
   position: absolute;
@@ -271,27 +289,36 @@ button {
   left: -13rem;
   background-color: var(--beaver);
 }
-.ready{
+
+.ready {
   background-image: url('../assets/homepage/ready-bg-desktop.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  max-width: 1440px;
+  margin: 0 auto;
 }
-.ready-grid{
+
+.ready-grid {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3.8rem 0;
 }
-.card__info__title--white{
+
+.card__info__title--white {
   width: auto;
   color: var(--white);
   margin: 0;
 }
-.footer{
+
+.footer {
+  max-width: 1440px;
+  margin: 0 auto;
   background-color: var(--codGray);
 }
-.footer-grid{
+
+.footer-grid {
   display: flex;
   color: white;
   padding: 10rem 0;
@@ -301,14 +328,80 @@ button {
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
-.address{
+
+.address {
   font-style: normal;
 }
-.schedule__title{
+
+.schedule__title {
   font-size: 1.5rem;
   font-weight: var(--regular);
 }
-.phone:hover{
+
+.phone:hover {
   color: var(--beaver);
   font-weight: var(--bold);
+}
+.imageee{
+  content: url('../assets/homepage/enjoyable-place-desktop.jpg');
+}
+
+@media screen and (max-width:1024px) {
+  .hero {
+    background-image: url('../assets/homepage/hero-bg-tablet.jpg');
+  }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .hero-grid {
+    width: 100%;
+    padding: 35rem 0 12rem;
+    margin: 6rem;
+    text-align: center;
+  }
+  .hero__logo {
+    margin-bottom: 4.5rem;
+  }
+  .hero__title {
+    font-size: 4.6rem;
+  }
+
+  .card-grid {
+    position: relative;
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .card__info {
+    width: 450px;
+    color: var(--mirage);
+    border: 1px solid cyan;
+  }
+  
+  .card__info__pattern {
+    margin-bottom: 4.5rem;
+  }
+  
+  .card__info__title {
+    width: 400px;
+    font-size: 4rem;
+    line-height: 5.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card__info__description {
+    line-height: 3rem;
+  }
+  .imageee{
+    width: 100%;
+    content: url('../assets/homepage/enjoyable-place-tablet.jpg');
+  }
+  .card__image {
+    position: relative;
+  }
 }
