@@ -95,96 +95,100 @@ button {
   color: var(--codGray);
 }
 
-.pattern {
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 76%;
-  overflow: hidden;
-}
-
-.pattern--center {
-  background-image: url('../assets/patterns/pattern-curve-top-right.svg');
-  height: 44%;
-  bottom: 10rem;
-  left: -12rem;
-}
-
-.pattern--bottom {
-  background-image: url('../assets/patterns/pattern-curve-top-left.svg');
-  height: 42%;
-  bottom: 7rem;
-  right: -11.2rem;
-}
-
-.pattern--top {
-  background-image: url('../assets/patterns/pattern-curve-top-right.svg');
-  height: 50%;
-  top: -15rem;
-  left: -47rem;
-}
-
 .card {
-  max-width: 1440px;
-  margin: 0 auto;
+  position: relative;
 }
 
-.card-grid--top {
-  margin-top: -7rem;
+.card--top {
+  margin-top: -8rem;
+  margin-bottom: 10rem;
+}
+
+.card--bottom {
+  margin-bottom: -8rem;
 }
 
 .card-grid {
-  position: relative;
-  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.card__info {
-  width: 450px;
-  color: var(--mirage);
-  border: 1px solid cyan;
-}
-
-.card__info__pattern {
-  margin-bottom: 4.5rem;
-}
-
-.card__info__title {
-  width: 400px;
-  font-size: 4rem;
-  line-height: 5.5rem;
-  margin-bottom: 2rem;
-}
-
-.card__info__description {
-  line-height: 3rem;
 }
 
 .card__image {
   position: relative;
 }
 
-.card__image__icon {
-  content: url('../assets/patterns/pattern-lines.svg');
-  display: inline-block;
+.card__image img {
+  box-shadow: 0 54px 74px -50px #5c6779;
+}
+
+.card__img--one {
+  content: url('../assets/homepage/enjoyable-place-desktop.jpg');
+}
+
+.card__img--two {
+  content: url('../assets/homepage/locally-sourced-desktop.jpg');
+}
+
+.lines {
+  display: block;
+  width: 150px;
+  height: 80px;
   position: absolute;
-  width: 15rem;
-  height: 8rem;
-  top: 29rem;
+  background-image: url('../assets/patterns/pattern-lines.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 4;
+  top: 28rem;
   right: -10rem;
 }
 
-.card__image__icon--top {
-  top: -4rem;
-  left: -4rem;
+.pattern {
+  position: absolute;
+  width: 86rem;
+  height: 30rem;
+  bottom: 12rem;
+  background-position: top center;
+  background-size: cover;
+  transform: scaleY(1.25);
+  background-repeat: no-repeat;
 }
 
-.card-grid--bottom {
-  margin-top: 10rem;
-  margin-bottom: -7rem;
+.pattern--right {
+  background-image: url('../assets/patterns/pattern-curve-top-left.svg');
+  right: 0;
+}
+
+.pattern--left {
+  background-image: url('../assets/patterns/pattern-curve-top-right.svg');
+}
+
+.card__info {
+  width: 450px;
+}
+
+.card__info__title {
+  position: relative;
+  width: 400px;
+  font-size: 4rem;
+  line-height: 5.5rem;
+  margin-bottom: 2rem;
+}
+
+.card__info__title::after {
+  content: '';
+  background-image: url('../assets/patterns/pattern-divide.svg');
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  width: 150px;
+  height: 10px;
+  top: -5rem;
+  left: 0;
+}
+
+.card__info__description {
+  line-height: 3rem;
 }
 
 .card--dark {
@@ -342,7 +346,8 @@ button {
   color: var(--beaver);
   font-weight: var(--bold);
 }
-.imageee{
+
+.imageee {
   content: url('../assets/homepage/enjoyable-place-desktop.jpg');
 }
 
@@ -366,7 +371,6 @@ button {
   .hero__title {
     font-size: 4.6rem;
   }
-
   .card-grid {
     position: relative;
     border: 1px solid red;
@@ -376,32 +380,72 @@ button {
     flex-direction: column;
     width: 100%;
   }
-  
   .card__info {
     width: 450px;
     color: var(--mirage);
-    border: 1px solid cyan;
   }
-  
   .card__info__pattern {
     margin-bottom: 4.5rem;
   }
-  
   .card__info__title {
     width: 400px;
     font-size: 4rem;
     line-height: 5.5rem;
     margin-bottom: 2rem;
   }
-  
   .card__info__description {
     line-height: 3rem;
   }
-  .imageee{
+  .imageee {
     width: 100%;
     content: url('../assets/homepage/enjoyable-place-tablet.jpg');
   }
   .card__image {
     position: relative;
+  }
+  .card-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card--top{
+    margin-bottom: 0;
+  }
+  .card--bottom{
+    margin-bottom: 0;
+  }
+  .card-grid--two {
+    flex-direction: column-reverse;
+  }
+  .card__img--one {
+    content: url('../assets/homepage/enjoyable-place-tablet.jpg');
+  }
+  .card__img--two {
+    content: url('../assets/homepage/locally-sourced-tablet.jpg');
+  }
+  .card__info {
+    margin: 10rem auto;
+  }
+  .card__info__title {
+    width: 100%;
+  }
+  .card__info__title::after {
+    top: -5rem;
+    left: 20rem;
+  }
+  .lines {
+    top: 23rem;
+    right: -5rem;
+  }
+  .pattern {
+    width: 50rem;
+    height: 18rem;
+    transform: scaleY(1.7);
+  }
+  .pattern--right {
+    bottom: 7rem;
+  }
+  .pattern--left {
+    bottom: inherit;
+    top: 28rem;
   }
 }
