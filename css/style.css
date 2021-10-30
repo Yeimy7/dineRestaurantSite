@@ -28,6 +28,7 @@ a {
   color: inherit;
 }
 
+
 li {
   list-style: none;
 }
@@ -35,6 +36,11 @@ li {
 button {
   border-style: none;
   outline: none;
+}
+
+body>* {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -55,7 +61,6 @@ button {
 .hero-grid {
   max-width: 540px;
   padding: 7rem 0 16.5rem;
-  border: 2px solid red;
 }
 
 .hero__logo {
@@ -73,6 +78,9 @@ button {
 }
 
 .button {
+  display: block;
+  width: 25rem;
+  text-align: center;
   padding: 25px 50px;
   margin: 40px 0;
   background-color: var(--codGray);
@@ -112,6 +120,77 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-10px);
+    -moz-transform: translatex(-10px);
+    -o-transform: translatex(-10px);
+    transform: translatex(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
+}
+
+@-moz-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-10px);
+    -moz-transform: translatex(-10px);
+    -o-transform: translatex(-10px);
+    transform: translatex(-10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translatex(-100px);
+    -moz-transform: translatex(-100px);
+    -o-transform: translatex(-100px);
+    transform: translatex(-100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translatex(0);
+    -moz-transform: translatex(0);
+    -o-transform: translatex(0);
+    transform: translatex(0);
+  }
+}
+
+.focus {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: .5s;
+  -moz-animation-duration: .5s;
+  -o-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-delay: .5s;
+  -moz-animation-delay: .5s;
+  -o-animation-duration: .5s;
+  animation-delay: .5s;
+  animation-iteration-count: 1;
 }
 
 .card__image {
@@ -165,6 +244,7 @@ button {
 
 .card__info {
   width: 450px;
+  color: var(--mirage);
 }
 
 .card__info__title {
@@ -196,8 +276,6 @@ button {
 }
 
 .menu {
-  max-width: 1440px;
-  margin: 0 auto;
   background-color: var(--codGray);
   color: var(--white);
   padding: 150px 0 100px;
@@ -254,10 +332,32 @@ button {
 }
 
 .options {
-  max-width: 1440px;
-  margin: 0 auto;
+  background-image: url('../assets/patterns/pattern-curve-top-right.svg');
+  background-repeat: no-repeat;
+  background-size: 40% 35%;
+}
+
+.options .button {
+  border-color: var(--codGray);
+}
+
+.options-grid {
   padding: 15rem 0;
-  border: 1px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options-grid .card__image::after {
+  content: '';
+  background-image: url('../assets/patterns/pattern-lines.svg');
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 80px;
+  top: -37px;
+  left: -50px;
+  display: block;
+  position: absolute;
 }
 
 .list {
@@ -296,29 +396,24 @@ button {
 
 .ready {
   background-image: url('../assets/homepage/ready-bg-desktop.jpg');
-  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: contain;
-  max-width: 1440px;
-  margin: 0 auto;
 }
 
 .ready-grid {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3.8rem 0;
+  height: 20.2rem;
+  padding: 0 3rem;
 }
 
-.card__info__title--white {
-  width: auto;
+.ready__title {
   color: var(--white);
-  margin: 0;
+  font-size: 3.4rem;
 }
 
 .footer {
-  max-width: 1440px;
-  margin: 0 auto;
   background-color: var(--codGray);
 }
 
@@ -326,11 +421,17 @@ button {
   display: flex;
   color: white;
   padding: 10rem 0;
-  gap: 16rem;
+  gap: 18rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 1.5rem;
   line-height: 2.5rem;
+}
+
+.footer__info {
+  display: flex;
+  align-items: center;
+  gap: 15rem;
 }
 
 .address {
@@ -345,10 +446,6 @@ button {
 .phone:hover {
   color: var(--beaver);
   font-weight: var(--bold);
-}
-
-.imageee {
-  content: url('../assets/homepage/enjoyable-place-desktop.jpg');
 }
 
 @media screen and (max-width:1024px) {
@@ -369,11 +466,10 @@ button {
     margin-bottom: 4.5rem;
   }
   .hero__title {
-    font-size: 4.6rem;
+    font-size: 6rem;
   }
   .card-grid {
     position: relative;
-    border: 1px solid red;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -381,24 +477,22 @@ button {
     width: 100%;
   }
   .card__info {
-    width: 450px;
-    color: var(--mirage);
-  }
-  .card__info__pattern {
-    margin-bottom: 4.5rem;
+    width: 465px;
+    margin: 10rem auto;
+    text-align: center;
   }
   .card__info__title {
-    width: 400px;
+    margin: 0 auto 2rem;
+    width: 85%;
     font-size: 4rem;
     line-height: 5.5rem;
-    margin-bottom: 2rem;
+  }
+  .card__info__title::after {
+    top: -5rem;
+    left: 17rem;
   }
   .card__info__description {
     line-height: 3rem;
-  }
-  .imageee {
-    width: 100%;
-    content: url('../assets/homepage/enjoyable-place-tablet.jpg');
   }
   .card__image {
     position: relative;
@@ -407,10 +501,10 @@ button {
     flex-direction: column;
     text-align: center;
   }
-  .card--top{
+  .card--top {
     margin-bottom: 0;
   }
-  .card--bottom{
+  .card--bottom {
     margin-bottom: 0;
   }
   .card-grid--two {
@@ -421,16 +515,6 @@ button {
   }
   .card__img--two {
     content: url('../assets/homepage/locally-sourced-tablet.jpg');
-  }
-  .card__info {
-    margin: 10rem auto;
-  }
-  .card__info__title {
-    width: 100%;
-  }
-  .card__info__title::after {
-    top: -5rem;
-    left: 20rem;
   }
   .lines {
     top: 23rem;
@@ -447,5 +531,237 @@ button {
   .pattern--left {
     bottom: inherit;
     top: 28rem;
+  }
+  .menu {
+    padding: 50px 0;
+  }
+  .menu-grid {
+    flex-direction: column;
+  }
+  .menu-grid .card__info {
+    margin-bottom: 5rem;
+  }
+  .options {
+    background-size: 50% 30%;
+  }
+  .options-grid {
+    padding: 12rem 0 0;
+    flex-direction: column;
+  }
+  .options-grid .card__info__title::after {
+    display: none;
+  }
+  .options-grid .card__info {
+    margin: 5rem auto;
+  }
+  .card__options {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .card__image__img {
+    position: relative;
+    content: url('../assets/homepage/family-gathering-tablet.jpg');
+  }
+  .list {
+    width: 650px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .list__item {
+    display: inline-block;
+  }
+  .list__item--active::after {
+    position: unset;
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: var(--beaver);
+    display: block;
+    margin: 0 auto;
+  }
+  .ready {
+    background-image: url('../assets/homepage/ready-bg-tablet.jpg');
+    background-size: cover;
+  }
+  .ready-grid {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.7rem;
+    height: 28rem;
+    padding: 0;
+  }
+  .ready__title {
+    color: var(--white);
+    font-size: 4rem;
+  }
+  .ready .button {
+    margin: 0;
+  }
+  .footer-grid {
+    gap: 15rem;
+    height: 100vh;
+  }
+  .footer .wrapper {
+    justify-content: flex-start;
+  }
+  .footer__info {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .hero {
+    background-color: var(--codGray);
+    background-image: url('../assets/homepage/hero-bg-mobile.jpg');
+    background-size: contain;
+  }
+  .wrapper {
+    padding: 1rem;
+  }
+  .hero-grid {
+    padding: 20rem .5rem 12rem;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .hero__logo {
+    margin-bottom: 2rem;
+  }
+  .hero__title {
+    font-size: 3.5rem;
+  }
+  .card__info {
+    margin: 8rem auto 5rem;
+    width: 95%;
+  }
+  .card__info__title {
+    margin: 0 auto 1rem;
+    width: 100%;
+    font-size: 3.2rem;
+    line-height: 4.5rem;
+  }
+  .card__info__title::after {
+    top: -5rem;
+    left: 15rem;
+  }
+  .card__info__description {
+    line-height: 167%;
+    font-size: 1.5rem;
+  }
+  .card__img--one {
+    content: url('../assets/homepage/enjoyable-place-mobile.jpg');
+  }
+  .card__img--two {
+    content: url('../assets/homepage/locally-sourced-mobile.jpg');
+  }
+  .lines {
+    display: none;
+  }
+  .pattern {
+    display: none;
+  }
+  .menu {
+    padding: 50px 0;
+  }
+  .menu-grid {
+    flex-direction: column;
+  }
+  .menu-grid .card__info {
+    margin-bottom: 5rem;
+  }
+  .review {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .review__image {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .review__image img {
+    position: relative;
+    margin: 20px auto;
+  }
+  .review__pattern {
+    opacity: 0;
+  }
+  .review__image--salmon {
+    content: url('../assets/homepage/salmon-mobile.jpg');
+  }
+  .review__image--beef {
+    content: url('../assets/homepage/beef-mobile.jpg');
+  }
+  .review__image--chocolate {
+    content: url('../assets/homepage/chocolate-mobile.jpg');
+  }
+  .review__detail {
+    width: 360px;
+    line-height: 3rem;
+  }
+  .review__detail__title {
+    font-size: 1.8rem;
+  }
+  .review__detail__description {
+    font-size: 1.5rem;
+  }
+  .options {
+    background-image: none;
+  }
+  .options-grid {
+    padding: 8rem 0 0;
+    flex-direction: column;
+  }
+  .options-grid .card__image::after {
+    display: none;
+  }
+  .options-grid .card__info {
+    margin: 3rem auto;
+  }
+  .card__image__img {
+    content: url('../assets/homepage/family-gathering-mobile.jpg');
+  }
+  .list {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  .card__options {
+    width: 98%;
+  }
+  .list__item {
+    display: block;
+  }
+  .list__item--active::after {
+    width: 40px;
+  }
+  .ready {
+    background-image: url('../assets/homepage/ready-bg-mobile.jpg');
+  }
+  .ready-grid {
+    height: 32rem;
+  }
+  .ready__title {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+  .footer-grid {
+    gap: 5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer .wrapper {
+    justify-content: center;
+  }
+  .footer__info {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/main.js"></script>
     <title>Dine Restaurant</title>
   </head>
   <body>
@@ -17,7 +18,7 @@
             Experience our seasonal menu in beautiful country surroundings. Eat
             the freshet produce from the comfort of our farmhouse.
           </p>
-          <button class="button">book a table</button>
+          <a href="./reservations.html" class="button">book a table</a>
         </header>
       </div>
     </section>
@@ -41,6 +42,7 @@
         </div>
       </div>
     </section>
+
     <section class="card card--bottom">
       <div class="pattern pattern--right"></div>
       <div class="wrapper">
@@ -64,21 +66,18 @@
         </div>
       </div>
     </section>
+
     <section class="menu">
       <div class="wrapper">
         <div class="menu-grid">
           <div class="card__info card--dark">
-            <img
-              class="card__info__pattern"
-              src="./assets/patterns/pattern-divide.svg"
-              alt="pattern divide"
-            />
             <h2 class="card__info__title">A few highlights from our menu</h2>
             <p class="card__info__description">
               We cater for all dietary requirements, but here's a glimpse at
               some of our diner's favourites. Our menu is revamped every season.
             </p>
           </div>
+
           <div>
             <div class="review">
               <div class="review__image">
@@ -88,6 +87,7 @@
                   alt="pattern divide"
                 />
                 <img
+                  class="review__image--salmon"
                   src="./assets/homepage/salmon-desktop-tablet.jpg"
                   alt="salmon"
                 />
@@ -108,8 +108,9 @@
                   alt="pattern divide"
                 />
                 <img
+                  class="review__image--beef"
                   src="./assets/homepage/beef-desktop-tablet.jpg"
-                  alt="salmon"
+                  alt="beef"
                 />
               </div>
               <div class="review__detail">
@@ -128,8 +129,9 @@
                   alt="pattern divide"
                 />
                 <img
+                  class="review__image--chocolate"
                   src="./assets/homepage/chocolate-desktop-tablet.jpg"
-                  alt="salmon"
+                  alt="chocolate"
                 />
               </div>
               <div class="review__detail">
@@ -146,25 +148,28 @@
         </div>
       </div>
     </section>
+
     <section class="options">
       <div class="wrapper">
-        <div class="card-grid">
-          <div class="pattern pattern--top"></div>
+        <div class="options-grid">
           <div class="card__image">
             <img
+              class="card__image__img"
+              id="image"
               src="./assets/homepage/family-gathering-desktop.jpg"
               alt="family gathering"
             />
-            <div class="card__image__icon card__image__icon--top"></div>
           </div>
-          <div class="card__info">
-            <h2 class="card__info__title">Family gathering</h2>
-            <p class="card__info__description">
-              We love catering for entire families. So please bring everyone
-              along for a special meal with your loved ones. We'll provide a
-              memorable experience for all.
-            </p>
-            <button class="button">book a table</button>
+          <div class="card__options">
+            <div class="card__info">
+              <h2 class="card__info__title" id="title">Family gathering</h2>
+              <p class="card__info__description" id="description">
+                We love catering for entire families. So please bring everyone
+                along for a special meal with your loved ones. We'll provide a
+                memorable experience for all.
+              </p>
+              <a href="./reservations.html" class="button">book a table</a>
+            </div>
             <ul class="list">
               <li class="list__item list__item--active">Family gathering</li>
               <li class="list__item">Special events</li>
@@ -178,34 +183,33 @@
     <section class="ready">
       <div class="wrapper">
         <div class="ready-grid">
-          <h2 class="card__info__title card__info__title--white"> Ready to make a reservation? </h2>
-          <button class="button button--transparent">book a table</button>
+          <h2 class="ready__title">Ready to make a reservation?</h2>
+          <a href="./reservations.html" class="button button--transparent"
+            >book a table</a
+          >
         </div>
       </div>
     </section>
 
-    <!-- Special events
-    Whether it's a romantic dinner or special dte you're celebrating with others we'll look after you. We'll be sure to mark your special date with an unforgettable meal.
-
-    Social events 
-    Are you looking to have a larger social event? No problem! We're more than happy to cater for big parties. We'll work with you to make your event a hit with everyone. -->
     <footer class="footer">
       <div class="wrapper">
         <div class="footer-grid">
           <a href="#">
             <img src="./assets/logo.svg" alt="logo dine" />
           </a>
-          <address class="address">
-            <p class="addr">marthwaite, sedbergh</p>
-            <p class="addr">cumbria</p>
-            <a href="tel:+00 44 123 4567" class="phone"> +00 44 123 4567 </a>
-          </address>
-          <div class="schedule">
-            <h3 class="schedule__title">open times</h3>
-            <ul>
-              <li>mon - fri: 9:00 am - 10:00 pm</li>
-              <li>sat - sun: 9:00 am - 11:30 pm</li>
-            </ul>
+          <div class="footer__info">
+            <address class="address">
+              <p class="addr">marthwaite, sedbergh</p>
+              <p class="addr">cumbria</p>
+              <a href="tel:+00 44 123 4567" class="phone"> +00 44 123 4567 </a>
+            </address>
+            <div class="schedule">
+              <h3 class="schedule__title">open times</h3>
+              <ul>
+                <li>mon - fri: 9:00 am - 10:00 pm</li>
+                <li>sat - sun: 9:00 am - 11:30 pm</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
