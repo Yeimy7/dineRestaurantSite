@@ -42,16 +42,185 @@ body>* {
     margin: 0 auto;
 }
 
-.container{
+.container {
     height: 130vh;
+    background-color: #fefefe;
     background-image: url('../assets/booking/hero-bg-desktop.jpg');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
-    padding-top:30rem;
+    display: grid;
+    grid-template-columns: minmax(auto, 1100px);
+    justify-content: center;
+    z-index: -2;
 }
-.form{
-    width: 45rem;
-    height: 45rem;
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 26rem 25rem 1fr;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "header header" "article reservation" ". reservation";
+    margin-bottom: 5rem;
+}
+
+.header {
+    grid-area: header;
+    margin-top: 7rem;
+    border: 2px solid red;
+}
+
+.article {
+    grid-area: article;
+    color: var(--white);
+    border: 2px solid greenyellow;
+}
+
+.article__title {
+    font-size: 6.4rem;
+    font-weight: var(--light);
+    margin-bottom: 2rem;
+}
+
+.article__description {
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+.reservation{
+    width: 100%;
+    height: 100%;
+    grid-area: reservation;
+    border: 2px solid black;
+    position: relative;
+    z-index: 4;
+    /* margin: 5rem; */
+}
+
+.form {
+    width: 100%;
+    height: 95%;
+    padding: 3rem;
     background-color: var(--white);
+    font-size: 1.8rem;
 }
+.form::after{
+    content: '';
+    background-image: url('../assets/patterns/pattern-lines.svg');
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    width: 15rem;
+    height: 8rem;
+    bottom: -1.3rem;
+    left: -8rem;
+    z-index: -1;
+}
+.input{
+    width: 100%;
+    height: 4rem;
+    padding: 2rem;
+    border-style: none;
+    border-bottom: 1px solid var(--shuttleGray);
+    margin-bottom: 3rem;
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.8rem;
+}
+.input::placeholder{
+    color: #C5C5C5;
+    font-size: 1.8rem;
+    font-weight: var(--light);
+    font-family: 'Spartan', sans-serif;
+}
+.selector{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+}
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    width: 8rem;
+    border-style: none;
+    border-bottom: 1px solid var(--shuttleGray);
+    font-family: 'Spartan', sans-serif;
+    padding-bottom: 2rem;
+    font-size: 1.8rem;
+    color: var(--shuttleGray);
+    margin-left: 2rem;
+}
+select:focus, input{
+    outline: none;
+}
+.persons{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom:2rem;
+    border-bottom: 1px solid var(--shuttleGray);
+    font-weight: var(--bold);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+.persons_btn{
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--beaver);
+    font-weight: var(--bold);
+}
+.button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 25px 50px;
+    background-color: var(--codGray);
+    border: 1px solid var(--white);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--semi-bold);
+    font-size: 1.4rem;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .wrap{
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: 0 auto;
+  }
+  .footer {
+    background-color: var(--codGray);
+    height: 28rem;
+  }
+  
+  .footer-grid {
+    display: flex;
+    color: white;
+    padding: 10rem 0;
+    gap: 18rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+  
+  .footer__info {
+    display: flex;
+    align-items: center;
+    gap: 15rem;
+  }
+  
+  .address {
+    font-style: normal;
+  }
+  
+  .schedule__title {
+    font-size: 1.5rem;
+    font-weight: var(--regular);
+  }
+  
+  .phone:hover {
+    color: var(--beaver);
+    font-weight: var(--bold);
+  }

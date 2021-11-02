@@ -1,17 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reservation.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reservation.css" />
     <title>Reservations</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="container">
-        <form  class="form">
-            <p>hola</p>
-        </form>
+      <div class="wrapper">
+        <header class="header">
+          <a href="./index.html" title="dine"
+            ><img src="./assets/logo.svg" alt="dine"
+          /></a>
+        </header>
+        <article class="article">
+          <h1 class="article__title">Reservations</h1>
+          <p class="article__description">
+            We can't wait to host you. If you have any special requirements
+            please feel free to call on the phone number below. We'll be happy
+            to accommodate you.
+          </p>
+        </article>
+        <section class="reservation">
+          <form class="form">
+            <input class="input" type="text" placeholder="Name" />
+            <input class="input" type="email" placeholder="Email" />
+            <div class="selector">
+              <label for="day">Pick a date</label>
+              <div>
+                <select name="month" id="month">
+                  <option value="mm">MM</option>
+                  <option value="enero">Enero</option>
+                  <option value="febrero">Febrero</option>
+                  <option value="Marzo">Marzo</option>
+                  <option value="Abril">Abril</option>
+                  <option value="Mayo">Mayo</option>
+                  <option value="Junio">Junio</option>
+                  <option value="Julio">Julio</option>
+                  <option value="Agosto">Agosto</option>
+                  <option value="Septiembre">Septiembre</option>
+                  <option value="Octubre">Octubre</option>
+                  <option value="Noviembre">Noviembre</option>
+                  <option value="Diciembre">Diciembre</option>
+                </select>
+                <select name="day" id="day">
+                  <option value="dd">DD</option>
+                </select>
+                <select name="year" id="year">
+                  <option value="yy">YY</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                </select>
+              </div>
+            </div>
+            <div class="selector">
+              <label for="hour">Pick a time</label>
+              <div>
+                <select name="hour" id="hour"></select>
+                <select name="minute" id="minute"></select>
+                <select name="time" id="time">
+                  <option value="am">AM</option>
+                  <option value="pm">PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="persons">
+              <button class="persons_btn">-</button>
+              <span class="persons__number"> 4 people</span>
+              <button class="persons_btn">+</button>
+            </div>
+            <input class="button" type="button" value="make reservation" />
+          </form>
+        </section>
+      </div>
     </section>
-</body>
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <a href="./index.html">
+            <img src="./assets/logo.svg" alt="logo dine" />
+          </a>
+          <div class="footer__info">
+            <address class="address">
+              <p class="addr">marthwaite, sedbergh</p>
+              <p class="addr">cumbria</p>
+              <a href="tel:+00 44 123 4567" class="phone"> +00 44 123 4567 </a>
+            </address>
+            <div class="schedule">
+              <h3 class="schedule__title">open times</h3>
+              <ul>
+                <li>mon - fri: 9:00 am - 10:00 pm</li>
+                <li>sat - sun: 9:00 am - 11:30 pm</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
