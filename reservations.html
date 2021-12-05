@@ -5,9 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reservation.css" />
+    <script src="./js/reservation.js"></script>
     <title>Reservations</title>
   </head>
   <body>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-message">
+          <p>Success!</p>
+          <p>Your request has been submitted.</p>
+          <a href="./index.html" class="button button--modal" id="ok">OK</a>
+        </div>
+      </div>
+    </div>
     <section class="container">
       <div class="wrapper">
         <header class="header">
@@ -22,28 +34,25 @@
             please feel free to call on the phone number below. We'll be happy
             to accommodate you.
           </p>
+          <a href="./reservations.html" class="button button--transparent">reserve place</a>
         </article>
         <section class="reservation">
           <form class="form">
-            <input class="input" type="text" placeholder="Name" />
-            <input class="input" type="email" placeholder="Email" />
+            <div>
+              <input class="input" type="text" placeholder="Name" id="name"/>
+              <p class="error">This field is required</p>
+            </div>
+            <div>
+              <input class="input" type="email" placeholder="Email" id="email" />
+              <p class="error">Email address is required</p>
+            </div>
             <div class="selector">
-              <label for="day">Pick a date</label>
+              <label for="day">Pick a date
+                <p class="error">This field is required</p>
+              </label>
               <div>
                 <select name="month" id="month">
                   <option value="mm">MM</option>
-                  <option value="enero">Enero</option>
-                  <option value="febrero">Febrero</option>
-                  <option value="Marzo">Marzo</option>
-                  <option value="Abril">Abril</option>
-                  <option value="Mayo">Mayo</option>
-                  <option value="Junio">Junio</option>
-                  <option value="Julio">Julio</option>
-                  <option value="Agosto">Agosto</option>
-                  <option value="Septiembre">Septiembre</option>
-                  <option value="Octubre">Octubre</option>
-                  <option value="Noviembre">Noviembre</option>
-                  <option value="Diciembre">Diciembre</option>
                 </select>
                 <select name="day" id="day">
                   <option value="dd">DD</option>
@@ -56,10 +65,19 @@
               </div>
             </div>
             <div class="selector">
-              <label for="hour">Pick a time</label>
+              <label for="hour">Pick a time
+                <p class="error">This field is required</p>
+              </label>
               <div>
-                <select name="hour" id="hour"></select>
-                <select name="minute" id="minute"></select>
+                <select name="hour" id="hour">
+                  <option value="00">00</option>
+                </select>
+                <select name="minute" id="minute">
+                  <option value="00">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
+                </select>
                 <select name="time" id="time">
                   <option value="am">AM</option>
                   <option value="pm">PM</option>
@@ -67,11 +85,11 @@
               </div>
             </div>
             <div class="persons">
-              <button class="persons_btn">-</button>
-              <span class="persons__number"> 4 people</span>
-              <button class="persons_btn">+</button>
+              <button class="persons_btn" id="less">-</button>
+              <span class="persons__number"> <span id="amount">4</span> people</span>
+              <button class="persons_btn" id="more">+</button>
             </div>
-            <input class="button" type="button" value="make reservation" />
+            <button class="button" id="reservation">make reservation</button>
           </form>
         </section>
       </div>

@@ -612,6 +612,9 @@ body>* {
     flex-direction: column;
     gap: 5rem;
   }
+  .button{
+    margin:4rem auto ;
+  }
 }
 
 @media screen and (max-width:425px) {

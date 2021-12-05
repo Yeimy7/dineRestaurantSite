@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300;400;600;700&display=swap');
+
 *, *::before, *::after {
     padding: 0;
     margin: 0;
@@ -43,7 +44,7 @@ body>* {
 }
 
 .container {
-    height: 130vh;
+    height: auto;
     background-color: #fefefe;
     background-image: url('../assets/booking/hero-bg-desktop.jpg');
     background-position: left top;
@@ -59,20 +60,18 @@ body>* {
     display: grid;
     grid-template-rows: 26rem 25rem 1fr;
     grid-template-columns: 50% 50%;
-    grid-template-areas: "header header" "article reservation" ". reservation";
+    grid-template-areas: "header header""article reservation"". reservation";
     margin-bottom: 5rem;
 }
 
 .header {
     grid-area: header;
     margin-top: 7rem;
-    border: 2px solid red;
 }
 
 .article {
     grid-area: article;
     color: var(--white);
-    border: 2px solid greenyellow;
 }
 
 .article__title {
@@ -90,18 +89,28 @@ body>* {
     width: 100%;
     height: 100%;
     grid-area: reservation;
-    border: 2px solid black;
     position: relative;
     z-index: 4;
-    /* margin: 5rem; */
+}
+
+.error {
+    font-size: 1rem;
+    margin-top: .8rem;
+    color: var(--error);
+    display: none;
 }
 
 .form {
     width: 100%;
     height: 95%;
-    padding: 3rem;
+    padding: 3.5rem 3rem;
     background-color: var(--white);
     font-size: 1.8rem;
+    box-shadow: 0 54px 74px -50px #5c6779;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 3rem;
 }
 
 .form::after {
@@ -123,9 +132,9 @@ body>* {
     padding: 2rem;
     border-style: none;
     border-bottom: 1px solid var(--shuttleGray);
-    margin-bottom: 3rem;
     font-family: 'Spartan', sans-serif;
     font-size: 1.8rem;
+    /* margin-top: 1rem; */
 }
 
 .input::placeholder {
@@ -138,7 +147,7 @@ body>* {
 .selector {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3.5rem;
+    /* margin-top: 3.5rem; */
 }
 
 select {
@@ -163,8 +172,7 @@ select:focus, input {
 
 option {
     display: block;
-    color: red;
-    border: 1px solid green;
+    color: black;
     margin-bottom: 2rem;
 }
 
@@ -175,7 +183,7 @@ option {
     border-bottom: 1px solid var(--shuttleGray);
     font-weight: var(--bold);
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 .persons_btn {
@@ -200,12 +208,21 @@ option {
     font-size: 1.4rem;
     font-family: inherit;
     cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.button--transparent {
+    margin: 2rem auto;
+    width: 70%;
+    background-color: transparent;
+    display: none;
 }
 
 .wrap {
     max-width: 1200px;
     padding: 0 40px;
     margin: 0 auto;
+
 }
 
 .footer {
@@ -244,9 +261,71 @@ option {
     font-weight: var(--bold);
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 40%;
+    position: relative;
+}
+
+.modal-message {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 4rem;
+    color: #008000;
+    font-weight: var(--bold);
+}
+
+.button--modal {
+    width: 30%;
+    height: 60px;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    background-color: var(--ebonyClay);
+}
+.button--modal:hover{
+    background-color: var(--codGray);
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 @media screen and (max-width:1024px) {
     .container {
-        height: 255vh;
+        height: auto;
         background-image: url('../assets/booking/hero-bg-tablet.jpg');
         background-position: left top;
         background-repeat: no-repeat;
@@ -255,43 +334,174 @@ option {
         justify-content: center;
         z-index: -2;
     }
+
     .wrapper {
         display: grid;
-        grid-template-rows: 20rem 30rem 1fr;
+        grid-template-rows: 18rem 25rem 1fr;
         grid-template-columns: 1fr;
-        grid-template-areas: "header " "article " "reservation";
+        grid-template-areas: "header ""article ""reservation";
         margin-bottom: 5rem;
+        padding: 0 5rem;
     }
+
     .article {
         text-align: center;
-        padding: 0 4rem;
+        padding: 0 2rem;
     }
+
     .article__title {
-        font-size: 5.5rem;
+        font-size: 5rem;
     }
-    .article__description{
-        font-size: 2rem;
+
+    .article__description {
+        font-size: 1.8rem;
     }
+
     .form {
         width: 90%;
         margin: 0 auto;
     }
+
     .form::after {
         display: none;
     }
+
+    .wrap {
+        padding: 0 20px;
+    }
+
+    .footer {
+        margin-top: 5rem;
+        height: 20rem;
+    }
+
+    .footer-grid {
+        gap: 8rem;
+        padding: 5rem 3rem;
+        font-size: 1.2rem;
+    }
+
+    .schedule__title {
+        font-size: 1.2rem;
+    }
+    .modal-message {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+    .button--modal {
+        width: 20%;
+        height: 40px;
+        margin-top: 2rem;
+        padding: 1rem;
+        font-size: 1rem;
+        background-color: var(--ebonyClay);
+    }
+}
+
+@media screen and (max-width:768px) {
+
     .footer {
         height: 100vh;
     }
+
     .footer-grid {
         gap: 15rem;
     }
+
     .footer .wrapper {
         justify-content: flex-start;
     }
+
     .footer__info {
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
         gap: 5rem;
+    }
+    
+}
+
+@media screen and (max-width:425px) {
+    .container {
+        background-image: url('../assets/booking/hero-bg-mobile.jpg');
+    }
+
+    .wrapper {
+        grid-template-rows: 18rem 32rem 1fr;
+        padding: 0;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+    .button--transparent {
+        display: block;
+    }
+
+    .article__title {
+        font-size: 3rem;
+    }
+
+    .article__description {
+        font-size: 1.5rem;
+    }
+
+    .selector {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .wrap {
+        padding: 0;
+    }
+
+    .footer {
+        height: 75vh;
+    }
+
+    .footer-grid {
+        gap: 5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    .footer .wrapper {
+        justify-content: center;
+    }
+
+    .footer__info {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-content {
+        width: 80%;
+        height: 35%;
+        position: relative;
+    }
+    .button--modal {
+        width: 30%;
+        height: 40px;
+        display: flex;
+        padding-top: .5rem;
+    }
+    .modal .button{
+        padding: 1rem 2.4rem; 
+    }
+}
+
+@media screen and (max-width:425px) {
+    .button {
+        padding: 2rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    select {
+        margin: 0;
+        width: 6rem;
+        font-size: 1.5rem;
     }
 }
